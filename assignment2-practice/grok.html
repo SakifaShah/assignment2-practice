@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faugei Flower Shop</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    /* Navbar */
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #fff; }
+    .navbar .logo { font-size: 24px; font-weight: bold; color: #f4a261; }
+    .navbar .menu { display: flex; align-items: center; }
+    .navbar .menu a { margin-left: 20px; text-decoration: none; color: #333; }
+    .navbar .cart { margin-left: 20px; }
+    @media (max-width: 768px) {
+      .navbar .menu a:not(.cart) { display: none; }
+      .navbar .cart { margin-left: 0; }
+    }
+
+    /* Banner */
+    .banner { display: flex; align-items: center; padding: 40px 0; }
+    .banner .content { flex: 1; padding-right: 20px; }
+    .banner .content h1 { color: #f4a261; font-size: 36px; }
+    .banner .content p { margin: 10px 0; }
+    .banner .image { flex: 1; }
+    .banner .image img { width: 100%; height: auto; }
+    @media (max-width: 768px) {
+      .banner { flex-direction: column; }
+      .banner .image { order: -1; }
+      .banner .content { padding-right: 0; text-align: left; }
+    }
+
+    /* Plants Section */
+    .plants { text-align: center; padding: 40px 0; }
+    .plants h2 { color: #f4a261; font-size: 28px; }
+    .plants .subtitle { margin: 10px 0; }
+    .plants .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 20px; }
+    .plants .card { text-align: center; }
+    .plants .card img { width: 100%; height: auto; }
+    .plants .card p { margin: 10px 0; }
+    .plants .card button { background: #f4a261; border: none; padding: 10px; color: #fff; cursor: pointer; }
+    @media (max-width: 768px) {
+      .plants .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Plants Lover Section */
+    .lover { display: flex; align-items: center; padding: 40px 0; }
+    .lover .image { flex: 1; position: relative; }
+    .lover .image img { width: 100%; height: auto; }
+    .lover .image .badge { position: absolute; top: 10px; left: 10px; background: #ffd700; padding: 5px 10px; }
+    .lover .content { flex: 1; padding-left: 20px; }
+    .lover .content h2 { color: #f4a261; font-size: 28px; }
+    .lover .content ul { list-style: none; margin-top: 10px; }
+    .lover .content ul li { margin: 5px 0; }
+    @media (max-width: 768px) {
+      .lover { flex-direction: column; }
+      .lover .image { order: -1; }
+      .lover .image .badge { display: none; }
+      .lover .content { padding-left: 0; text-align: left; }
+    }
+
+    /* Latest Deals Section */
+    .deals { padding: 40px 0; text-align: center; }
+    .deals h2 { color: #f4a261; font-size: 28px; }
+    .deals .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
+    .deals .card { background: #f5f5f5; padding: 20px; }
+    .deals .card img { width: 100%; height: auto; }
+    .deals .card p { margin: 10px 0; }
+    .deals .card a { text-decoration: none; color: #f4a261; }
+    @media (max-width: 768px) {
+      .deals .cards { grid-template-columns: 1fr; }
+    }
+
+    /* Join Section */
+    .join { text-align: center; padding: 40px 0; background: url('join-bg.jpg') no-repeat center/cover; color: #fff; }
+    .join h2 { font-size: 28px; }
+    .join .input-group { margin-top: 20px; }
+    .join input { padding: 10px; width: 200px; }
+    .join button { padding: 10px 20px; background: #f4a261; border: none; color: #fff; cursor: pointer; }
+    @media (max-width: 768px) {
+      .join { padding: 20px 0; }
+    }
+
+    /* Footer */
+    .footer { display: flex; justify-content: space-between; padding: 20px 0; border-top: 1px solid #ddd; }
+    .footer .logo { color: #f4a261; }
+    .footer .links a { display: block; margin: 5px 0; text-decoration: none; color: #333; }
+    .footer .social a { margin-left: 10px; }
+    @media (max-width: 768px) {
+      .footer { flex-direction: column; text-align: center; }
+      .footer .links, .footer .social { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Faugei</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About Us</a>
+      <a href="#" class="cart">Cart ($56)</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="banner">
+      <div class="content">
+        <h1>ALWAYS FRESH FLOWERS</h1>
+        <p>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh flowers that are perfect for any occasion.</p>
+      </div>
+      <div class="image"><img src="banner-image.jpg" alt="Flowers"></div>
+    </div>
+
+    <div class="plants">
+      <h2>Our Plants</h2>
+      <p class="subtitle">Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</p>
+      <div class="cards">
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+        <div class="card"><img src="lily-blossom.jpg" alt="Lily Blossom"><p>Lily Blossom<br>20 USD</p><button>ADD TO CART</button></div>
+      </div>
+    </div>
+
+    <div class="lover">
+      <div class="image"><img src="lover-image.jpg" alt="Flower & Plants Lover"><div class="badge">Trusted Plant Lover</div></div>
+      <div class="content">
+        <h2>Flower & Plants Lover</h2>
+        <ul>
+          <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
+          <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
+          <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="deals">
+      <h2>Latest Deals</h2>
+      <p class="subtitle">Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic blooms, we offer a wide variety of fresh.</p>
+      <div class="cards">
+        <div class="card"><img src="deal1.jpg" alt="40% Off"><p>40% Off | Bloom Plant<br>Shop Now</p></div>
+        <div class="card"><img src="deal2.jpg" alt="30% Off"><p>30% Off | Ana Plant<br>Shop Now</p></div>
+        <div class="card"><img src="deal3.jpg" alt="25% Off"><p>25% Off | Zabo Plant<br>Shop Now</p></div>
+      </div>
+    </div>
+
+    <div class="join">
+      <h2>Join the colorful Bunch</h2>
+      <div class="input-group">
+        <input type="email" placeholder="Your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="logo">Faugei</div>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Help Center</a>
+    </div>
+    <div class="social">
+      <a href="#">in</a>
+      <a href="#">X</a>
+      <a href="#">fb</a>
+      <a href="#">yt</a>
+    </div>
+  </div>
+</body>
+</html>
